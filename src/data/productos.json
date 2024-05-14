@@ -1,0 +1,77 @@
+{
+    "productos": [
+      {
+        "nombre": "Camisa de vestir para hombre",
+        "categoria": "hombre",
+        "precio": 39.99,
+        "imagen": "camisa_hombre.jpg"
+      },
+      {
+        "nombre": "Chaqueta de cuero para hombre",
+        "categoria": "hombre",
+        "precio": 89.99,
+        "imagen": "chaqueta_cuero_hombre.jpg"
+      },
+      {
+        "nombre": "Pantalones vaqueros para hombre",
+        "categoria": "hombre",
+        "precio": 49.99,
+        "imagen": "pantalones_vaqueros_hombre.jpg"
+      },
+      {
+        "nombre": "Zapatillas deportivas para hombre",
+        "categoria": "hombre",
+        "precio": 59.99,
+        "imagen": "zapatillas_hombre.jpg"
+      },
+      {
+        "nombre": "Vestido de noche elegante",
+        "categoria": "mujer",
+        "precio": 79.99,
+        "imagen": "vestido_noche_mujer.jpg"
+      },
+      {
+        "nombre": "Blusa floral para mujer",
+        "categoria": "mujer",
+        "precio": 29.99,
+        "imagen": "blusa_floral_mujer.jpg"
+      },
+      {
+        "nombre": "Falda plisada para mujer",
+        "categoria": "mujer",
+        "precio": 34.99,
+        "imagen": "falda_plisada_mujer.jpg"
+      },
+      {
+        "nombre": "Sandalias de tacón para mujer",
+        "categoria": "mujer",
+        "precio": 49.99,
+        "imagen": "sandalias_tacon_mujer.jpg"
+      },
+      {
+        "nombre": "Camiseta divertida para niños",
+        "categoria": "niños",
+        "precio": 19.99,
+        "imagen": "camiseta_divertida_niños.jpg"
+      },
+      {
+        "nombre": "Pantalones cortos para niños",
+        "categoria": "niños",
+        "precio": 14.99,
+        "imagen": "pantalones_cortos_niños.jpg"
+      },
+      {
+        "nombre": "Conjunto de pijama para niños",
+        "categoria": "niños",
+        "precio": 24.99,
+        "imagen": "pijama_niños.jpg"
+      },
+      {
+        "nombre": "Zapatillas deportivas para niños",
+        "categoria": "niños",
+        "precio": 29.99,
+        "imagen": "zapatillas_niños.jpg"
+      }
+    ]
+  }
+  

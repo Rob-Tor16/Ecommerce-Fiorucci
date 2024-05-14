@@ -1,0 +1,9 @@
+.img-home{
+    width: auto;
+    max-width: 500px;
+}
+
+
+section{
+    background-image: url('/images/img-banner1.jpg');
+}
