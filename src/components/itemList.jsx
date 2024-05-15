@@ -28,16 +28,16 @@ const ItemList = ({ productos, titulo }) => {
             <div className="row rounded">
             <ul className="nav justify-content-center gap-5">
                       <li className="nav-item">
-                          <Link to="/productos" className="btn-primary">Todos</Link>
+                          <Link to="/productos" className="btn btn-primary">Todos</Link>
                       </li>
                       <li className="nav-item">
-                          <Link  to="/productos/Procesadores"  className="btn-primary">Hombres</Link>
+                          <Link  to="/productos/Hombres"  className="btn btn-primary">Hombres</Link>
                       </li>
                       <li className="nav-item">
-                          <Link to="/productos/Placas de video"  className="btn-primary">Mujeres</Link>
+                          <Link to="/productos/Mujeres"  className="btn btn-primary">Mujeres</Link>
                       </li>
                       <li className="nav-item">
-                          <Link to="/productos/Placas de video"  className="btn-primary">Niños</Link>
+                          <Link to="/productos/Niños"  className="btn btn-primary">Niños</Link>
                       </li>
               </ul>
               {currentProducts.map((prod) => <Item producto={prod} key={prod.id} />)}
