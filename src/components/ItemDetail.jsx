@@ -1,6 +1,7 @@
 import React from 'react'
 import  {  useState } from 'react'
 import ItemCount from './ItemCount';
+import Acordeon from "./Acordeon";
 
 const ItemDetail = ({item}) => {
 
@@ -23,58 +24,39 @@ const ItemDetail = ({item}) => {
                 <h2>{item.titulo}</h2>
                 <img className="img-fluid" src={item.imagen} alt={item.titulo}/>
             </div>
-            <div className=" col-md-5 p-5">
+            <div className=" col-md-5 p-5 ">
                 <h2>
                     <span className='text-primary'>
                         ${item.precio}
                     </span>
                 </h2>
-                <h4>categoría: {item.categoria}</h4>
-
+                <div>categoría: {item.categoria}</div>
+                <div className="accordion p-2" id="accordionExample">
+                <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingFour">
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Detalles de la prenda:
+                    </button>
+                    </h2>
+                    <div
+                    id="collapseFour"
+                    className="accordion-collapse collapse"
+                    aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample"
+                    >
+                    <div className="accordion-body">
+                        {item.descripcion}
+                    </div>
+                    </div>
+               
+                </div>
+                </div>
+                
                 <div className='gap-5'>
                     <ItemCount cantidad = {cantidad} handleSumar= {handleSumar} handleRestar= {handleRestar} handleAgregar= { ()=> { agregarAlCarrito( item, cantidad)}}/>
                 </div>
                 
-                <ul className='lista'>
-                    <li className='item'>
-                        <i className="bi bi-check-circle-fill text-primary"></i>
-                        <div>
-                            <strong><span className='text-primary'>¡ULTIMAS UNIDADES!</span></strong>
-                            <div> Solo para venta web</div>
-                        </div>
-                        
-                    </li>
-                    <li className='item'>
-                        <i className="bi bi-check-circle-fill text-primary"></i>
-                        <div>
-                            <strong><span className='text-primary'>STOCK BAJO EN EL LOCAL</span></strong>
-                            <div> Solo para venta presencial</div>
-                        </div>
-                        
-                    </li>
-                    <li className='item'>
-                        <i className="bi bi-shop text-primary"></i>
-                        <div>
-                            <strong><span>RETIRO <span className='text-primary'>¡GRATIS!</span></span></strong>
-                            <div>Arenales 2741</div>
-                        </div>
-                        
-                    </li>
-                    <li className='item'>
-                        <i className="bi bi-truck text-primary"></i>
-                        <div>
-                            <strong><span className='text-primary'>ENVÍOS A TODO EL PAÍS </span></strong>
-                            <div>Envío moto Mar del Plata llega mañana</div>
-                        </div>
-                    </li>
-                    <li className='item'>
-                        <i className="bi bi-shield-check text-primary "></i>
-                        <div>
-                            <strong><span className='text-primary'>GARANTÍA </span></strong>
-                            <div>360 días</div>
-                        </div>
-                    </li>
-                </ul>
+                <Acordeon/>
             </div>  
         </div>      
     </div>

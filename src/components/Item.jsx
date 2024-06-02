@@ -12,14 +12,13 @@ const Item = ({producto}) => {
               <img className="imagen-producto" src={producto.imagen}/>
               <div className="card-info">
                 <p className="text-title">{producto.titulo} </p>
-                <p className="text-body">Product description and details</p>
               </div>
-              <div className="card-footer">
-              <span className="text-title">${producto.precio}</span>
+
+              <div className="text-title">${producto.precio}</div>
 
               <Link type="button" className="btn btn-primary" to={`/item/${producto.id}`} >Ver Detalles</Link>
 
-            </div></div>
+            </div>
               
                 
             </div>
