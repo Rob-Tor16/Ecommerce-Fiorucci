@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import CartWidget from './cartWidget';
 
 const NavBar = () => {
   return (
@@ -24,9 +24,7 @@ const NavBar = () => {
               </li>
             </ul>
             <form className="d-flex gap-3">
-              <Link to="/cart" className="btn btn-primary my-2 my-sm-0" type="submit">
-                <i className="bi bi-bag-heart-fill"></i>
-              </Link>
+              <CartWidget/>
             </form>
           </div>
         </div>

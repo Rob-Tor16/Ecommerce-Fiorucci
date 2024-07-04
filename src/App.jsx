@@ -1,7 +1,7 @@
 import {BrowserRouter , Routes, Route} from "react-router-dom"
 import Home from "./components/Home"
 import NavBar from "./components/NavBar"
-import Cart from "./components/Cart"
+import Carrito from "./components/Cart.jsx"
 import ItemListContainer from "./components/itemListContainer.jsx"
 import './App.css'
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx"
@@ -22,10 +22,10 @@ function App() {
       <NavBar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/cart" element= {<Cart/>}/>
           <Route path="/productos" element={<ItemListContainer/>}/>
           <Route path="/productos/:categoria" element={<ItemListContainer />} />
           <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+          <Route path="/carrito" element={<Carrito />} />
           <Route path="*" element={<PageNotFound/>} />
         </Routes>
       </ToastContainer>

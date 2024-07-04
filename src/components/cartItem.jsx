@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 
-const cartItem = ({producto}) => {
+const CartItem = ({producto}) => {
 
     const {borrarItem} = useContext(CartContext)
   return (
@@ -20,4 +20,4 @@ const cartItem = ({producto}) => {
   )
 }
 
-export default cartItem
+export default CartItem
