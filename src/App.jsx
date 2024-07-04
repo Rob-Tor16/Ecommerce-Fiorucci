@@ -6,13 +6,15 @@ import ItemListContainer from "./components/itemListContainer.jsx"
 import './App.css'
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx"
 import PageNotFound from "./components/PageNotFound.jsx"
+import { CartProvider } from "./context/CartContext.jsx"
 
 function App() {
 
 
   return (
     <>
-      <BrowserRouter>
+    <CartProvider>
+    <BrowserRouter>
       <NavBar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -23,6 +25,8 @@ function App() {
           <Route path="*" element={<PageNotFound/>} />
         </Routes>
       </BrowserRouter>
+    </CartProvider>
+      
     </>
   )
 }
