@@ -1,0 +1,39 @@
+.container-boton {
+    padding-top: 7px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.count{
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    width: 300px;
+    
+}
+
+.button-cantidad {
+    padding: 4px 60px;
+    border: 0;
+    background-color: white;
+    letter-spacing: 1.5px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: white 0px 10px 0px 0px;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+  }
+  
+  .button-cantidad:hover {
+    box-shadow:white 0px 7px 0px 0px;
+  }
+  
+  .button-cantidad:active {
+    background-color: white;
+    /*50, 168, 80*/
+    box-shadow: white 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
+  }
