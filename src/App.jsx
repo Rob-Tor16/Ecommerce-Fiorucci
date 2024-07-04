@@ -7,6 +7,9 @@ import './App.css'
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx"
 import PageNotFound from "./components/PageNotFound.jsx"
 import { CartProvider } from "./context/CartContext.jsx"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
 
@@ -15,6 +18,7 @@ function App() {
     <>
     <CartProvider>
     <BrowserRouter>
+      <ToastContainer>
       <NavBar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -24,6 +28,8 @@ function App() {
           <Route path="/item/:id" element={<ItemDetailContainer/>}/>
           <Route path="*" element={<PageNotFound/>} />
         </Routes>
+      </ToastContainer>
+      
       </BrowserRouter>
     </CartProvider>
       
