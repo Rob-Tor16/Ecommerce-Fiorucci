@@ -1,6 +1,6 @@
-import React from 'react'
-import { createContext, useEffect,useState } from 'react'
-import {toast, Bounce} from "react-toastify";
+import { createContext, useEffect, useState } from "react";
+import { toast, Bounce } from 'react-toastify';
+
 
 export const CartContext = createContext();
 
@@ -8,19 +8,18 @@ const carritoInicial = JSON.parse(localStorage.getItem("carrito")) || [];
 
 export const CartProvider = ({children}) => {
 
+    const [carrito, setCarrito] = useState(carritoInicial);
 
-    const [carrito, setCarrito] = useState(carritoInicial)
-
-    const agregarAlCarrito = (item,cantidad) => {
-        const ItemAgregado = {...item, cantidad};
-
+    const agregarAlCarrito = (item, cantidad) => {
+        const itemAgregado = { ...item, cantidad };
+    
         const nuevoCarrito = [...carrito];
-        const estaEnElCarrito = nuevoCarrito.fins((producto) => producto.id === productoAgregado.id);
-
+        const estaEnElCarrito = nuevoCarrito.find((producto) => producto.id === itemAgregado.id);
+    
         if (estaEnElCarrito) {
             estaEnElCarrito.cantidad += cantidad;
         } else {
-            nuevoCarrito.push(ItemAgregado);
+            nuevoCarrito.push(itemAgregado);
             toast.success(`Producto agregado al carrito`, {
                 position: "top-right",
                 autoClose: 5000,
@@ -41,34 +40,35 @@ export const CartProvider = ({children}) => {
     }
 
     const precioTotal = () => {
-        return carrito.reduce ((acc, prod) => acc + prod.precio * prod.cantidad, 0);
+        return carrito.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0);
     }
 
-    const limpiarCarrito =() => {
+    const limpiarCarrito = () => {
         setCarrito([]);
     }
 
     const borrarItem = (itemId) => {
-        setCarrito((prevCart) => prevCart.filter((prod) => prod.id !== itemId))
-    }
+        setCarrito((prevCart) => prevCart.filter((prod) => prod.id !== itemId));
+      };
 
     useEffect(() => {
         localStorage.setItem("carrito", JSON.stringify(carrito));
-    })
-        
-    }
-  return (
-    <CartContext.Provider value={{
-        carrito,
-        agregarAlCarrito,
-        cantidadEnCarrito,
-        precioTotal,
-        limpiarCarrito,
-        borrarItem
-    }}>
+    }, [carrito])
+    
 
-    </CartContext.Provider>
-  )
+    return (
+        <CartContext.Provider value={ {
+            carrito,
+            agregarAlCarrito,
+            cantidadEnCarrito,
+            precioTotal,
+            limpiarCarrito,
+            borrarItem
+        } }>
+            {children}
+        </CartContext.Provider>
+    )
 
 
-export default CartContext
+
+}
