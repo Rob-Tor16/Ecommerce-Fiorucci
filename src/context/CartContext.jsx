@@ -20,7 +20,7 @@ export const CartProvider = ({children}) => {
         if (estaEnElCarrito) {
             estaEnElCarrito.cantidad += cantidad;
         } else {
-            nuevoCarrito.push(itemAgregado);
+            nuevoCarrito.push(ItemAgregado);
             toast.success(`Producto agregado al carrito`, {
                 position: "top-right",
                 autoClose: 5000,
