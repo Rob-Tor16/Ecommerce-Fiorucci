@@ -1,0 +1,11 @@
+.form-checkout{
+    width: auto;
+    max-width: 800px;
+}
+
+@media (max-width:500px) {
+    .form-checkout{
+        width: 100%;
+    }
+
+  }

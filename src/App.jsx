@@ -6,23 +6,32 @@ import ItemListContainer from "./components/itemListContainer.jsx"
 import './App.css'
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx"
 import PageNotFound from "./components/PageNotFound.jsx"
+import { CartProvider } from "./context/cartContext.jsx"
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+import CheckOut from "./components/checkOut.jsx"
 
 function App() {
 
 
   return (
     <>
-      <BrowserRouter>
+    <CartProvider>
+    <BrowserRouter>
+    <ToastContainer />
       <NavBar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/cart" element= {<Cart/>}/>
           <Route path="/productos" element={<ItemListContainer/>}/>
+          <Route path="/checkout" element={<CheckOut/>}/>
           <Route path="/productos/:categoria" element={<ItemListContainer />} />
           <Route path="/item/:id" element={<ItemDetailContainer/>}/>
           <Route path="*" element={<PageNotFound/>} />
         </Routes>
       </BrowserRouter>
+    </CartProvider>
+      
     </>
   )
 }

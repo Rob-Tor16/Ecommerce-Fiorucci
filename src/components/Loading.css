@@ -82,3 +82,11 @@
       transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
     }
   }
+
+  .contenedor-spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 400px;
+    margin-top: 400px;
+}

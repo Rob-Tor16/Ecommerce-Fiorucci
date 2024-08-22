@@ -1,10 +1,13 @@
 import React from 'react'
-import  {  useState } from 'react'
+import  { useContext, useState } from 'react'
 import ItemCount from './ItemCount';
 import Acordeon from "./Acordeon";
+import { CartContext } from '../context/cartContext';
 
 const ItemDetail = ({item}) => {
 
+    const {carrito, agregarAlCarrito} = useContext(CartContext);
+    console.log(carrito);
 
     const [cantidad, setCantidad] = useState(1);
     

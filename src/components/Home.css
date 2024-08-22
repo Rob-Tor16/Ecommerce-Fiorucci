@@ -3,7 +3,8 @@
     max-width: 500px;
 }
 
-
-section{
-    background-image: url('/images/img-banner1.jpg');
+.fondo{
+    display: flex;
+    width: auto;
+    max-width: 500px;
 }
