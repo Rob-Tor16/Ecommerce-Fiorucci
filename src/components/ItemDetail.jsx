@@ -2,7 +2,7 @@ import React from 'react'
 import  { useContext, useState } from 'react'
 import ItemCount from './ItemCount';
 import Acordeon from "./Acordeon";
-import { CartContext } from '../context/cartContext';
+import { CartContext } from '../context/CartContext.jsx'
 
 const ItemDetail = ({item}) => {
 
