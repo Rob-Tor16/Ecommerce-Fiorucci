@@ -57,7 +57,7 @@ const Cart = () => {
                 </div>
                   </div>
                     
-                <span className="d-flex justify-content-center"><img className="w-50"src="./images/undraw_successful_purchase_re_mpig.svg"/></span>
+                
             </div>
             
           </div>
