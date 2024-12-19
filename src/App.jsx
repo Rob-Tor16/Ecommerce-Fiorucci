@@ -12,12 +12,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import Login from "./components/Login.jsx"
 import Register from "./components/Register.jsx"
 import CheckOut from "./components/checkOut.jsx"
+import { AuthProvider } from "./context/authContext.jsx"
 
 function App() {
 
 
   return (
     <>
+    <AuthProvider>
     <CartProvider>
     <BrowserRouter>
     <ToastContainer />
@@ -35,6 +37,8 @@ function App() {
         </Routes>
       </BrowserRouter>
     </CartProvider>
+    </AuthProvider>
+    
       
     </>
   )
