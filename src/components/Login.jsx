@@ -65,7 +65,7 @@ const Login = () => {
             disabled={isSigningIn}
             className={`btn btn-primary w-100 mt-3 ${isSigningIn ? 'disabled' : ''}`}
           >
-            {isSigningIn ? 'Signing In...' : 'LogIn '}
+            {isSigningIn ? 'logIning In...' : 'LogIn '}
           </button>
         </form>
         <p className="text-center mt-3">

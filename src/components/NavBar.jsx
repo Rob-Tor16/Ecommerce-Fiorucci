@@ -2,8 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/authContext';
+import { doSignOut } from '../firebase/auth';
 
 const NavBar = () => {
+  const navigate = useNavigate()
+  const { userLoggedIn } = useAuth()
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-light" data-bs-theme="light">
@@ -24,6 +29,17 @@ const NavBar = () => {
               </li>
             </ul>
             <form className="d-flex gap-3">
+            {
+                userLoggedIn
+                    ?
+                    <>
+                        <button onClick={() => { doSignOut().then(() => { navigate('/login') }) }} className="btn btn-danger">Logout</button>
+                    </>
+                    :
+                    <>
+                        <Link className='btn btn-info' to={'/login'}>Login</Link>
+                    </>
+            }
               <Link to="/cart" className="btn btn-primary my-2 my-sm-0" type="submit">
                 <i className="bi bi-bag-heart-fill"></i>
               </Link>

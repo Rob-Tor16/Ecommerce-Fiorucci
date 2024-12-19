@@ -1,11 +1,7 @@
 import React from 'react';
-import { useAuth } from '../context/authContext';
 
 const Home = () => {
-  const { currentUser } = useAuth();
 
-  // Verificar si currentUser es nulo
-  const userName = currentUser?.displayName || currentUser?.email || "Invitado";
 
   return (
     <div>
@@ -16,7 +12,7 @@ const Home = () => {
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-6 text-center ltr:sm:text-left rtl:sm:text-right d-flex justify-content-center align-items-center flex-column">
               <h1 className="display-4 mb-4">
-                Bienvenido {userName}, a{' '}
+                Bienvenido a{' '}
                 <strong className="text-rose-700">Fiorucci</strong>
               </h1>
 
