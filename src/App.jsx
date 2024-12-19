@@ -9,6 +9,8 @@ import PageNotFound from "./components/PageNotFound.jsx"
 import { CartProvider } from "./context/CartContext.jsx";
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import Login from "./components/Login.jsx"
+import Register from "./components/Register.jsx"
 import CheckOut from "./components/checkOut.jsx"
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
           <Route path="/productos" element={<ItemListContainer/>}/>
           <Route path="/checkout" element={<CheckOut/>}/>
           <Route path="/productos/:categoria" element={<ItemListContainer />} />
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
           <Route path="/item/:id" element={<ItemDetailContainer/>}/>
           <Route path="*" element={<PageNotFound/>} />
         </Routes>
