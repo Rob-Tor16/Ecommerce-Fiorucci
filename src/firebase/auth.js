@@ -18,11 +18,17 @@ export const doSignInWithEmailAndPassword = (email, password) => {
 };
 
 export const doSignInWithGoogle = async () => {
-  const provider = new GoogleAuthProvider();
-  const result = await signInWithPopup(auth, provider);
-  const user = result.user;
-
-  // add user to firestore
+  try {
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    return result.user;
+  } catch (error) {
+    console.error("Error en signInWithGoogle:", error.message);
+    if (error.code === "auth/invalid-credential") {
+      console.error("Credenciales inválidas. Revisa tu configuración de Google en Firebase.");
+    }
+    throw error;
+  }
 };
 
 export const doSignOut = () => {

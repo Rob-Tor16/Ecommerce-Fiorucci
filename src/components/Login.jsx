@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { doSignInWithEmailAndPassword, doSignInWithGoogle  } from '../firebase/auth'
 import { Navigate, Link } from 'react-router-dom'
 import { useAuth } from '../context/authContext'
+import "./Login.css"
 
 const Login = () => {
 
@@ -12,26 +13,31 @@ const Login = () => {
     const [isSigningIn,setIsSigningIn] = useState('')
     const [errorMessage,setErrorMessage] = useState('')
 
-    const onSubmit = async (e) =>{
+    const onSubmit = async (e) => {
       e.preventDefault()
-      if(!isSigningIn){
-        setIsSigningIn(true)
-        await doSignInWithEmailAndPassword(email, password);
+      if(!isSigningIn) {
+          setIsSigningIn(true)
+          await doSignInWithEmailAndPassword(email, password)
       }
-    }
+  }
 
-    const onGoogleSignIn = (e) => {
+  const onGoogleSignIn = (e) => {
       e.preventDefault()
-      if(!isSigningIn){
-        setIsSigningIn(true)
-        doSignInWithGoogle().catch(err => {
-          setIsSigningIn(false)
-        })
-    }
+      if (!isSigningIn) {
+          setIsSigningIn(true)
+          doSignInWithGoogle().catch(err => {
+              setIsSigningIn(false)
+          })
+      }
   }
   return (
+    <>
+    {userLoggedIn && (<Navigate to={'/'} replace={true} />)}
     <main className="d-flex align-items-center justify-content-center vh-100">
       <div className="card p-4 shadow border rounded w-100" style={{ maxWidth: '400px' }}>
+        <div>
+          <img className="logo-login" src="./images/fiorucci-logo-light.png"/>
+        </div>
         <div className="text-center mb-4">
           <h3 className="text-dark">Bienvenido</h3>
         </div>
@@ -121,6 +127,8 @@ const Login = () => {
         </button>
       </div>
     </main>
+    </>
+    
   );
 };
 

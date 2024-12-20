@@ -24,7 +24,7 @@ const Cart = () => {
 
   return (
     <div className="contenedor-carrito d-flex">
-                <div className="carrito d-flex flex-row">
+                <div className="carrito d-flex flex-row justify-content-center rounded shadow">
                   <div>
                   <div className="carrito-titulo d-flex justify-content-center bg-black flex-column">
                         <div className="d-flex justify-content-center" ><h3 className="text-white">Cartera</h3></div>
