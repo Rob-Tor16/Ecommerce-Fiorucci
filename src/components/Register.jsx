@@ -29,6 +29,9 @@ const Register = () => {
     
           <main className="d-flex align-items-center justify-content-center vh-100">
             <div className="card p-4 shadow border rounded w-100" style={{ maxWidth: '400px' }}>
+              <div>
+                <img className="logo-login" src="./images/fiorucci-logo-light.png"/>
+              </div>
               <div className="text-center mb-4">
                 <h3 className="text-dark">Crea una nueva cuenta</h3>
               </div>
